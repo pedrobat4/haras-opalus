@@ -1,0 +1,16 @@
+# Configuração de deploy do Netlify — Haras Opalus
+# Garante que o site publicado seja o BUILD (pasta dist), não o código-fonte.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  # Vite 7 exige Node >= 20.19 / 22.12 — fixa Node 22 para o build não quebrar.
+  NODE_VERSION = "22"
+
+# SPA: qualquer rota cai no index.html (arquivos estáticos existentes têm prioridade).
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
