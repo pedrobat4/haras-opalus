@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+/* ============================================================
+   HARAS OPALUS — Design System
+   Refined equestrian heritage: deep navy + bronze/gold + cyan
+   ============================================================ */
+
+@theme {
+  /* Navy — brand core (#051433) and depth steps */
+  --color-navy-950: #030b1f;
+  --color-navy-900: #051433; /* brand background */
+  --color-navy-850: #08193f;
+  --color-navy-800: #0a1c4a;
+  --color-navy-700: #0e2456;
+  --color-navy-600: #14306e;
+
+  /* Brand blues */
+  --color-royal: #0007a4;
+  --color-cyan: #00b6ff;
+
+  /* Bronze / gold — leather & saddle warmth */
+  --color-bronze-900: #4a2c0f;
+  --color-bronze-800: #603913;
+  --color-bronze-600: #906335;
+  --color-bronze-500: #957843;
+  --color-gold-400: #c9a86a; /* lightened accent for navy */
+  --color-gold-300: #ddc187;
+  --color-gold-200: #ecd9aa;
+
+  /* Cream / ink */
+  --color-cream: #f6f0e3;
+  --color-cream-dim: #d8cfbd;
+
+  /* Fonts */
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Mulish", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-navy-900);
+    color: var(--color-cream);
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-gold-400);
+    color: var(--color-navy-900);
+  }
+
+  /* Bronze scrollbar */
+  ::-webkit-scrollbar {
+    width: 11px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-navy-950);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--color-bronze-600), var(--color-bronze-800));
+    border-radius: 999px;
+    border: 2px solid var(--color-navy-950);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gold-400);
+  }
+}
+
+@layer components {
+  /* Eyebrow / kicker label */
+  .eyebrow {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--color-gold-400);
+  }
+
+  /* Gold gradient text for accents */
+  .text-gold-grad {
+    background: linear-gradient(105deg, #ecd9aa 0%, #c9a86a 45%, #906335 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Thin ornamental divider with center diamond */
+  .rule-diamond {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+  }
+  .rule-diamond::before,
+  .rule-diamond::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--color-bronze-600),
+      transparent
+    );
+  }
+}
+
+/* Film grain overlay */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+}
+
+/* Animated bronze glow blob */
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(3%, -4%) scale(1.08);
+  }
+}
+.glow-drift {
+  animation: drift 16s ease-in-out infinite;
+}
+
+/* Slow shimmer for the hero emblem ring */
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spin-slow {
+  animation: spin-slow 60s linear infinite;
+}
+
+/* Scroll cue bounce */
+@keyframes nudge {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 1;
+  }
+}
+.nudge {
+  animation: nudge 2.2s ease-in-out infinite;
+}
