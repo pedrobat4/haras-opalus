@@ -56,10 +56,9 @@ export default function Hero() {
           animate="show"
           className="font-display text-5xl font-medium leading-[0.95] tracking-tight text-cream sm:text-7xl md:text-[5.5rem]"
         >
-          Um cavalo é{" "}
-          <span className="text-gold-grad italic">poesia</span>
-          <br />
-          em movimento
+          Movidos por{" "}
+          <span className="text-gold-grad italic">paixão</span>
+          <br />e <span className="text-gold-grad italic">tradição</span>
         </motion.h1>
 
         <motion.p
@@ -69,9 +68,9 @@ export default function Hero() {
           animate="show"
           className="mt-7 max-w-2xl text-base leading-relaxed text-cream-dim sm:text-lg"
         >
-          Movidos por paixão e tradição. No Haras Opalus, criamos e
-          selecionamos equinos da raça Mangalarga Marchador, unindo excelência
-          genética, manejo responsável e profundo respeito por cada animal.
+          No Haras Opalus, criamos e selecionamos equinos da raça Mangalarga
+          Marchador, unindo excelência genética, manejo responsável e profundo
+          respeito por cada animal.
         </motion.p>
 
         <motion.div
