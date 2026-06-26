@@ -24,7 +24,7 @@ export default function Hero() {
       <div className="absolute bottom-0 left-0 h-[40vh] w-[40vh] rounded-full bg-[radial-gradient(circle,rgba(0,182,255,0.10),transparent_70%)] blur-3xl" />
 
       <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center px-6 text-center">
-        {/* Emblem with rotating ring */}
+        {/* Emblem */}
         <motion.div
           custom={0}
           variants={rise}
@@ -32,7 +32,6 @@ export default function Hero() {
           animate="show"
           className="relative mb-9"
         >
-          <div className="spin-slow absolute inset-0 -m-4 rounded-full border border-dashed border-bronze-600/40" />
           <img
             src="/assets/logo-opalus.png"
             alt="Haras Opalus — Mangalarga Marchador"
@@ -70,9 +69,9 @@ export default function Hero() {
           animate="show"
           className="mt-7 max-w-2xl text-base leading-relaxed text-cream-dim sm:text-lg"
         >
-          É força sem violência. É liberdade, beleza e paixão sem limites. No
-          Haras Opalus, criamos e selecionamos o Mangalarga Marchador com
-          excelência genética e profundo respeito pelos animais.
+          Movidos por paixão e tradição. No Haras Opalus, criamos e
+          selecionamos equinos da raça Mangalarga Marchador, unindo excelência
+          genética, manejo responsável e profundo respeito por cada animal.
         </motion.p>
 
         <motion.div
